@@ -13,8 +13,12 @@ class DefaultController extends Controller
     
     public function listClientAction()
     {
-        $clients = $this->get('lesson_design_patterns.example')->getClients();
+        $service = $this->get('lesson_design_patterns.example');
         
-        return $this->render('LessonDesignPatternsBundle:Lessons:ListClient.html.twig', ['clients' => $clients]);
+        $total = $service->count();
+        
+        $clients = $service->getClients();
+        
+        return $this->render('LessonDesignPatternsBundle:Lessons:ListClient.html.twig', ['total' => $total, 'clients' => $clients]);
     }
 }

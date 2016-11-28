@@ -28,4 +28,9 @@ class ExampleService
     {
         return $this->collectionClient->get();
     }
+    
+    public function count()
+    {
+       return $this->collectionClient->count(); 
+    }
 }

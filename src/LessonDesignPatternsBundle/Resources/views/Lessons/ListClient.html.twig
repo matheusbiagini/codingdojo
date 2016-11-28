@@ -4,6 +4,8 @@
 
 {% block body %}
     
+    <span>Total de clientes: {{total}}</span>
+    
     <ul id="navigation">
         {% for client in clients %}
             <li>{{client.getName()}} ({{client.getMail()}}), tem  {{client.getAge()}} ano(s).</li>

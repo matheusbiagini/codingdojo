@@ -4,34 +4,27 @@ namespace LessonDesignPatternsBundle\Collection;
 
 class Collections 
 {
-    private $data;
-    
-    public function __construct(array $data)
-    {
-        $this->data = $data;
-    }
-    
     public function get()
     {
-        return $this->data;
+        return $this->collection();
     }
     
     public function count()
     {
-        return count($this->data);
+        return count($this->get());
     }
     
     public function keys()
     {
-        return array_keys($this->data);
+        return array_keys($this->get());
     }
     
     public function removeElement($element)
     {
-        $key = array_search($element, $this->data, true);
+        $key = array_search($element, $this->get(), true);
 
         if ($key !== false) {
-            unset($this->data[$key]);
+            unset($this->get()[$key]);
 
             return true;
         }
@@ -41,6 +34,6 @@ class Collections
     
     public function containsKey($key)
     {
-        return isset($this->data[$key]);
+        return isset($this->get()[$key]);
     }
 }
