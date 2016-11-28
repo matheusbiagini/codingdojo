@@ -1,3 +1,4 @@
+/var/*
 /web/bundles/
 /app/cache/*
 /app/logs/*
@@ -8,4 +9,3 @@ nbproject/
 .idea/
 /app/config/parameters.yml
 /app/config/parameters_test.yml
-/var/
