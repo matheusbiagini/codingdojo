@@ -1,0 +1,123 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hypnobox - Dojo: Design Patterns{% endblock %}
+
+{% block body %}
+    <!-- Portfolio Grid Section -->
+    <section id="dojoaulacurrent">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Designs Patterns</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#designFactory" class="portfolio-link" data-toggle="modal">
+                        <p>Factory</p>
+                        <img src="/assets/img/portfolio/cabin.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#designSingleton" class="portfolio-link" data-toggle="modal">
+                        <p>Singleton</p>
+                        <img src="/assets/img/portfolio/cake.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#designStrategy" class="portfolio-link" data-toggle="modal">
+                        <p>Strategy</p>
+                        <img src="/assets/img/portfolio/game.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Padrões de projetos Modals -->
+
+    <div class="portfolio-modal modal fade" id="designFactory" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl"></div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Factory patterns</h2>
+                            <hr class="star-primary">
+                            <img src="/assets/img/portfolio/cabin.png" class="img-responsive img-centered" alt="">
+                            <p>O padrão Factory fornece uma interface para a criação de famílias de objetos correlatos ou dependentes sem a necessidade de especificar a classe concreta destes objetos.</p>
+                            <p>O padrão Factory fornece uma nova instância do objeto, toda vez que invocado.</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="portfolio-modal modal fade" id="designSingleton" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Singleton patterns</h2>
+                            <hr class="star-primary">
+                            <img src="/assets/img/portfolio/cake.png" class="img-responsive img-centered" alt="">
+                            <p>Singleton é um padrão de projeto de software (do inglês Design Pattern). Este padrão garante a existência de apenas uma instância de uma classe, mantendo um ponto global de acesso ao seu objeto.</p>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-modal modal fade" id="designStrategy" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Strategy patterns</h2>
+                            <hr class="star-primary">
+                            <img src="/assets/img/portfolio/game.png" class="img-responsive img-centered" alt="">
+                            
+                            <p> Strategy é um padrão de projeto de software (do inglês design pattern), pode ser chamado de policy. Este padrão foi documentado no Catálogo GOF (Gang of Four), sendo categorizado como um padrão comportamental de desenvolvimento de software.  De modo que delega as responsabilidades adquiridas pelas entidades, atribuindo, portanto, o comportamento. Assim a comunicação entre os objetos é aprimorada, pois há a distribuição das responsabilidades. </p>
+                            <p> O objetivo é representar uma operação a ser realizada sobre os elementos de uma estrutura de objetos. </p>
+                            <p> O padrão Strategy permite definir novas operações sem alterar as classes dos elementos sobre os quais opera.</p>
+                            
+                            
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}    

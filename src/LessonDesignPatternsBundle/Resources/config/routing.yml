@@ -1,0 +1,15 @@
+lesson_design_patterns_homepage:
+    path:     /aula/designpatterns
+    defaults: { _controller: LessonDesignPatternsBundle:Default:index }
+    
+lesson_design_patterns_example_factory:
+    path:     /aula/designpatterns/factory
+    defaults: { _controller: LessonDesignPatternsBundle:exampleFactory:index }
+    
+lesson_design_patterns_example_singleton:
+    path:     /aula/designpatterns/singleton
+    defaults: { _controller: LessonDesignPatternsBundle:exampleSingleton:index }
+    
+lesson_design_patterns_example_strategy:
+    path:     /aula/designpatterns/strategy
+    defaults: { _controller: LessonDesignPatternsBundle:exampleStrategy:index }    

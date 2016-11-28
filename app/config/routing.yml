@@ -1,3 +1,7 @@
+lesson_design_patterns:
+    resource: "@LessonDesignPatternsBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
