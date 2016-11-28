@@ -15,4 +15,3 @@ Home: http://dojo.dev/aula/designpatterns
 Factory: http://dojo.dev/aula/designpatterns/factory
 Singleton: http://dojo.dev/aula/designpatterns/singleton
 Strategy: http://dojo.dev/aula/designpatterns/strategy
-
