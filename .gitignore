@@ -1,0 +1,10 @@
+/web/bundles/
+/app/cache/*
+/app/logs/*
+/build/
+/vendor/
+/bin/
+nbproject/
+.idea/
+/app/config/parameters.yml
+/app/config/parameters_test.yml
