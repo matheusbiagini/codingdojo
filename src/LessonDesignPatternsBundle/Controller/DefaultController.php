@@ -10,4 +10,11 @@ class DefaultController extends Controller
     {
         return $this->render('LessonDesignPatternsBundle:Lessons:Default.html.twig');
     }
+    
+    public function listClientAction()
+    {
+        $clients = $this->get('lesson_design_patterns.example')->getClients();
+        
+        return $this->render('LessonDesignPatternsBundle:Lessons:ListClient.html.twig', ['clients' => $clients]);
+    }
 }

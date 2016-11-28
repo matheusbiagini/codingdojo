@@ -2,6 +2,10 @@ lesson_design_patterns_homepage:
     path:     /aula/designpatterns
     defaults: { _controller: LessonDesignPatternsBundle:Default:index }
     
+lesson_design_patterns_listclients:
+    path:     /aula/designpatterns/clients
+    defaults: { _controller: LessonDesignPatternsBundle:Default:listClient }    
+    
 lesson_design_patterns_example_factory:
     path:     /aula/designpatterns/factory
     defaults: { _controller: LessonDesignPatternsBundle:exampleFactory:index }
