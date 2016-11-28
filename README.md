@@ -12,6 +12,7 @@ Este ambiente para Dojo é baseado no SYMFONY 3.1.7.
 Design Patterns : 
 
 * Home: http://dojo.dev/aula/designpatterns
+* Dados: Mock: http://dojo.dev/aula/designpatterns/clients
 * Factory: http://dojo.dev/aula/designpatterns/factory
 * Singleton: http://dojo.dev/aula/designpatterns/singleton
 * Strategy: http://dojo.dev/aula/designpatterns/strategy
