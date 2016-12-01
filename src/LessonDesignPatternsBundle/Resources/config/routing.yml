@@ -16,4 +16,12 @@ lesson_design_patterns_example_singleton:
     
 lesson_design_patterns_example_strategy:
     path:     /aula/designpatterns/strategy
-    defaults: { _controller: LessonDesignPatternsBundle:exampleStrategy:index }    
+    defaults: { _controller: LessonDesignPatternsBundle:exampleStrategy:index }
+    
+lesson_design_patterns_example_factory_wesley:
+    path:     /aula/designpatterns/factory/wesley
+    defaults: { _controller: LessonDesignPatternsBundle:exampleFactory:wesley }    
+    
+lesson_design_patterns_example_factory_milani:
+    path:     /aula/designpatterns/factory/milani
+    defaults: { _controller: LessonDesignPatternsBundle:exampleFactory:milani }    

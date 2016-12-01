@@ -4,4 +4,7 @@ services:
         arguments: ["@lesson_design_patterns.collection.client"]
         
     lesson_design_patterns.collection.client:
-        class: LessonDesignPatternsBundle\Collection\CollectionClient    
+        class: LessonDesignPatternsBundle\Collection\CollectionClient
+        
+    client.factory:
+        class: LessonDesignPatternsBundle\Factory\ClientFactory

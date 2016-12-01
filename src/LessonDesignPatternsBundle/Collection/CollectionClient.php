@@ -17,6 +17,18 @@ class CollectionClient extends Collections
             new Client('Carol', 'carol@hypnobox.com.br', '18'),
             new Client('Eduardo', 'eduardo@hypnobox.com.br', '19'),
             new Client('Dani', 'dani@hypnobox.com.br', '19'),
+            new Client('Milani', 'milani@hypnobox.com.br', '39'),
        ]; 
+    }
+    
+    public function getWesley() {
+        
+        return $this->collection()[2];
+        
+    }
+    
+    public function getMilani() {
+        
+        return $this->collection()[8];
     }
 }
