@@ -23,4 +23,8 @@ Design Patterns :
 * Aula 2
 
 * Singleton: http://dojo.dev/aula/designpatterns/singleton
+* Wesley Singleton: http://dojo.dev/aula/designpatterns/singleton/wesley
+* Milani Singleton: http://dojo.dev/aula/designpatterns/singleton/milani
+
+* Aula 3
 * Strategy: http://dojo.dev/aula/designpatterns/strategy

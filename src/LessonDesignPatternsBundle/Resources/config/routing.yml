@@ -24,4 +24,12 @@ lesson_design_patterns_example_factory_wesley:
     
 lesson_design_patterns_example_factory_milani:
     path:     /aula/designpatterns/factory/milani
-    defaults: { _controller: LessonDesignPatternsBundle:exampleFactory:milani }    
+    defaults: { _controller: LessonDesignPatternsBundle:exampleFactory:milani }
+    
+lesson_design_patterns_example_singleton_wesley:
+    path:     /aula/designpatterns/singleton/wesley
+    defaults: { _controller: LessonDesignPatternsBundle:exampleSingleton:sendEmailWesley}   
+
+lesson_design_patterns_example_singleton_milani:
+    path:     /aula/designpatterns/singleton/milani
+    defaults: { _controller: LessonDesignPatternsBundle:exampleSingleton:sendEmailMilani}   
