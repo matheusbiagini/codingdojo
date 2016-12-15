@@ -19,6 +19,7 @@
 
     <!-- Theme CSS -->
     <link href="/assets/css/freelancer.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -44,7 +45,7 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="#page-top">
+                <a class="navbar-brand" href="/">
                     Hypnobox - Coding Dojo		
 		</a>
             </div>
@@ -55,9 +56,28 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
-                    <li class="page-scroll">
-                        <a href="#dojoaulacurrent">Aula Dojo</a>
+                    
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dojos <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/aula/designpatterns">Dojo Design Patterns</a></li>
+                            <li><a href="/aula/designpatterns/clients">Mock Clientes</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/aula/designpatterns/factory">Dojo Factory</a></li>
+                            <li><a href="/aula/designpatterns/factory/wesley">1) Exemplo Wesley Factory</a></li>
+                            <li><a href="/aula/designpatterns/factory/milani">2) Exemplo Milani Factory</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/aula/designpatterns/singleton">Dojo Singleton</a></li>
+                            <li><a href="/aula/designpatterns/singleton/wesley">1) Exemplo Wesley Singleton</a></li>
+                            <li><a href="/aula/designpatterns/singleton/milani">2) Exemplo Milani Singleton</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/aula/designpatterns/strategy">Dojo Strategy</a></li>
+                            <li><a href="/aula/designpatterns/strategy/wesley">1) Exemplo Wesley Strategy Fail</a></li>
+                            <li><a href="/aula/designpatterns/strategy/milani">2) Exemplo Milani Strategy Fail</a></li>
+                            <li><a href="/aula/designpatterns/strategy/gender">2) Exemplo Gender Strategy</a></li>
+                        </ul>
                     </li>
+                    
                     <li class="page-scroll">
                         <a href="#about">Time</a>
                     </li>
