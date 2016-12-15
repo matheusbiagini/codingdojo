@@ -8,3 +8,13 @@ services:
         
     client.factory:
         class: LessonDesignPatternsBundle\Factory\ClientFactory
+
+    homem.strategy:
+        class: LessonDesignPatternsBundle\Strategies\HomemEmailStrategy
+        
+    mulher.strategy:
+        class: LessonDesignPatternsBundle\Strategies\MulherEmailStrategy
+        
+    gender.man.strategy:
+        class: LessonDesignPatternsBundle\Service\GenderService
+        arguments: ["@mulher.strategy"]

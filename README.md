@@ -28,3 +28,6 @@ Design Patterns :
 
 * Aula 3
 * Strategy: http://dojo.dev/aula/designpatterns/strategy
+* Wesley fail: http://dojo.dev/aula/designpatterns/strategy/wesley
+* Milani fail: http://dojo.dev/aula/designpatterns/strategy/milani
+* Gender Strategy: http://dojo.dev/aula/designpatterns/strategy/gender

@@ -32,4 +32,16 @@ lesson_design_patterns_example_singleton_wesley:
 
 lesson_design_patterns_example_singleton_milani:
     path:     /aula/designpatterns/singleton/milani
-    defaults: { _controller: LessonDesignPatternsBundle:exampleSingleton:sendEmailMilani}   
+    defaults: { _controller: LessonDesignPatternsBundle:exampleSingleton:sendEmailMilani} 
+    
+lesson_design_patterns_example_strategy_wesley:
+    path:     /aula/designpatterns/strategy/wesley
+    defaults: { _controller: LessonDesignPatternsBundle:exampleStrategy:emailHomem}      
+
+lesson_design_patterns_example_strategy_milani:
+    path:     /aula/designpatterns/strategy/milani
+    defaults: { _controller: LessonDesignPatternsBundle:exampleStrategy:emailMulher}     
+    
+lesson_design_patterns_example_strategy_gender:
+    path:     /aula/designpatterns/strategy/gender
+    defaults: { _controller: LessonDesignPatternsBundle:exampleStrategy:gender}    
