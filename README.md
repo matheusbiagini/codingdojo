@@ -31,3 +31,6 @@ Design Patterns :
 * Wesley fail: http://dojo.dev/aula/designpatterns/strategy/wesley
 * Milani fail: http://dojo.dev/aula/designpatterns/strategy/milani
 * Gender Strategy: http://dojo.dev/aula/designpatterns/strategy/gender
+
+* Aula 4
+* Leilao: http://codingdojo.dev/aula/leilao/avaliar
