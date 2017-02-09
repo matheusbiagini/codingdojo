@@ -1,0 +1,3 @@
+services:
+    lesson_auction.leilao:
+       class: Lesson\AuctionBundle\Service\LeilaoService

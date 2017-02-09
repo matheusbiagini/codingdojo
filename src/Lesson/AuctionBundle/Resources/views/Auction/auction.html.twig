@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hypnobox - Dojo: Brincando de Leilão.{% endblock %}
+
+{% block body %}
+
+    <h1>Nosso Leilão</h1>
+    <br/>
+
+    <p>Total de lances: {{avaliacao.total}}</p>
+    <br/>
+    <p>
+    O ganhador do {{avaliacao.ganhador.getItem().getNome()}} foi {{avaliacao.ganhador.getComprador().getNome()}}
+    com o lance de {{avaliacao.ganhador.getValor()}}.
+    </p>
+    <br/>
+    
+    <p>
+    O master loser do {{avaliacao.perdedor.getItem().getNome()}} foi {{avaliacao.perdedor.getComprador().getNome()}}
+    com o lance de {{avaliacao.perdedor.getValor()}}.
+    </p>
+    <br/>
+
+{% endblock %} 

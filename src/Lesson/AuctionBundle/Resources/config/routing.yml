@@ -1,0 +1,7 @@
+lesson_auction_homepage:
+    path:     /aula/leilao
+    defaults: { _controller: LessonAuctionBundle:Default:index }
+
+lesson_auction_todo:
+    path:     /aula/leilao/avaliar
+    defaults: { _controller: LessonAuctionBundle:Default:toDoAuction }
