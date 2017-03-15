@@ -1,0 +1,4 @@
+lesson_tdd_homepage:
+    path:     /aula/tdd
+    defaults: { _controller: LessonTddBundle:Default:index }    
+    
