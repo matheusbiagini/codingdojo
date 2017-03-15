@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new LessonDesignPatternsBundle\LessonDesignPatternsBundle(),
             new Lesson\AuctionBundle\LessonAuctionBundle(),
+            new LessonTddBundle\LessonTddBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

@@ -5,6 +5,10 @@ lesson_auction:
 lesson_design_patterns:
     resource: "@LessonDesignPatternsBundle/Resources/config/routing.yml"
     prefix:   /
+    
+lesson_tdd:
+    resource: "@LessonTddBundle/Resources/config/routing.yml"
+    prefix:   /    
 
 app:
     resource: "@AppBundle/Controller/"

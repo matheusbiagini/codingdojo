@@ -1,6 +1,6 @@
 <?php
 
-namespace LessonDesignPatternsBundle\Tests\Service;
+namespace LessonTddBundle\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
 use LessonTddBundle\Service\Numero;
@@ -52,9 +52,9 @@ class NumeroTest extends TestCase
      */
     public function testEqualZero($actual)
     {
-        $instace = new Numero($actual);
+        $instance = new Numero($actual);
         
-        $this->assertEquals(0, $actual);
+        $this->assertEquals(0, $instance->getNumero());
     }
     
     public function testIsFalse()
@@ -76,7 +76,9 @@ class NumeroTest extends TestCase
         return [
             [0],
             [false],
-            [null]
+            [null],
+            [new DateTime('NOW')],
+            [true]
         ];
     }
     
