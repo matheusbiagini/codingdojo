@@ -8,6 +8,8 @@ use DateTime;
 
 class NumeroTest extends TestCase
 {
+    private $args = array();
+    
     public function testInstanceOf()
     {
         $instance = new Numero(null);
@@ -44,7 +46,16 @@ class NumeroTest extends TestCase
         
         $instance = new Numero($test);
         
-        $this->assertTrue($test == $instance->getNumero());
+        $this->assertTrue(count($this->args) > 0);
+    }
+    
+    public function testIsTrue2()
+    {
+        $test = 90;
+        
+        $instance = new Numero($test);
+        
+        $this->assertTrue(count($this->args) > 0);
     }
     
     /**
@@ -74,11 +85,12 @@ class NumeroTest extends TestCase
     public function providerNotNumeric()
     {
         return [
-            [0],
             [false],
             [null],
             [new DateTime('NOW')],
-            [true]
+            [true],
+            ['Galinha Pintadinha'],
+            [new \Exception]
         ];
     }
     
@@ -92,4 +104,41 @@ class NumeroTest extends TestCase
             [70,70]
         ];
     }
+    
+     /**
+     * @dataProvider providerGreater10
+     */
+    public function testMaiorQue10($n)
+    {
+        $this->markTestIncomplete('Falcao me dudeu');
+        $instance =  new Numero($n);        
+        
+        $this->assertGreaterThanOrEqual(15, $instance->getNumero());
+    }
+    
+    public function providerGreater10()
+    {
+        return [
+            [10],
+            [11],
+            [27],
+            [100],
+            [0]
+        ];
+    }
+    
+    /**
+     * @expectedException \InvalidArgumentException
+     */
+    public function testException()
+    {
+        $instance = new Numero(5);      
+    }
+    
+    protected function setUp()
+    {
+        $this->args = [1, 3, 6, 77, 69];
+    }
+    
+    
 }
