@@ -1,19 +1,19 @@
 <?php
 namespace LessonTddBundle\Service;
 
+use LessonTddBundle\Service\Contas;
+
 class ProvinhaEstagiarios 
 {
     private $nomeEstagiario;
-    private $n1;
-    private $n2;
+    private $contas;
     private $resultado;
     private $resultadoEsperado;
     
-    public function __construct($nomeEstagiario, $n1, $n2, $resultadoEsperado) 
+    public function __construct($nomeEstagiario, Contas $contas, $resultadoEsperado) 
     {
         $this->nomeEstagiario = $nomeEstagiario;
-        $this->n1 = $n1;
-        $this->n2 = $n2;
+        $this->contas = $contas;
         $this->resultadoEsperado = $resultadoEsperado;
     }
     
@@ -22,19 +22,20 @@ class ProvinhaEstagiarios
         return $this->nomeEstagiario;
     }
     
-    public function getN1()
-    {
-        return $this->n1;
-    }
-    
-    public function getN2()
-    {
-        return $this->n2;
-    }
-    
     public function getResultadoEsperado()
     {
         return $this->resultadoEsperado;
+    }
+    
+    public function getResultado()
+    {
+        return $this->resultado;
+    }
+    
+    public function avaliar()
+    {
+        $this->resultado = $this->contas->getResultado();
+        return ($this->getResultado() == $this->getResultadoEsperado());
     }
 
 }

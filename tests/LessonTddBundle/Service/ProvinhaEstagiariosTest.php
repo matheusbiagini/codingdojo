@@ -4,21 +4,32 @@ namespace LessonDesignPatternsBundle\Tests\Service;
 
 use PHPUnit\Framework\TestCase;
 use LessonTddBundle\Service\ProvinhaEstagiarios;
+use LessonTddBundle\Service\Contas;
+use LessonTddBundle\Service\Numero;
 
 class ProvinhaEstagiariosTest extends TestCase
 {
-    public function testNomeDoEstagiario()
+    public function testGetterNomeDoEstagiario()
     {
-        $provinhaEstagiarios = new ProvinhaEstagiarios('Lucas Frezarini', 10, 10, 3912);
-        
+        $conta = new Contas(new Numero(10), new Numero(10));
+        $provinhaEstagiarios = new ProvinhaEstagiarios('Lucas Frezarini', $conta, 3912);
         $this->assertEquals('Lucas Frezarini', $provinhaEstagiarios->getNome()) ;
     }
     
-    public function testResultadoLucas()
+    public function testGettersMethodsResultado()
     {
-        $provinha = new ProvinhaEstagiarios('Lucas', 10, 10, 39022);
+        $conta = new Contas(new Numero(10), new Numero(10));
+        $provinha = new ProvinhaEstagiarios('Alison', $conta, 28);
+        $provinha->avaliar();
         
-        $resultadoEsperado = $provinha->getResultadoEsperado();
+        $this->assertEquals(28, $provinha->getResultado());
+        $this->assertEquals(28, $provinha->getResultadoEsperado());
+    }
+    
+    public function testMockReturnValue()
+    {
+        $conta = new Contas(new Numero(10), new Numero(10));
+        $provinha = new ProvinhaEstagiarios('Lucas', $conta, 39022);
         
         $contas = $this->getMockBuilder('LessonTddBundle\Service\Contas')
                 ->disableOriginalConstructor()
@@ -30,9 +41,10 @@ class ProvinhaEstagiariosTest extends TestCase
         $this->assertEquals($provinha->getResultadoEsperado(), $contas->getResultado());        
     }
     
-    public function testResultadoIsa()
+    public function testMockWillReturn()
     {
-        $provinha = new ProvinhaEstagiarios('Isa', 10, 10, 100000000000);
+        $conta = new Contas(new Numero(10), new Numero(10));
+        $provinha = new ProvinhaEstagiarios('Isa', $conta, 100000000000);
         
         $resultadoEsperado = $provinha->getResultadoEsperado();
         
@@ -46,11 +58,10 @@ class ProvinhaEstagiariosTest extends TestCase
         $this->assertEquals($provinha->getResultadoEsperado(), $contas->getResultado());        
     }
     
-    public function testResultadoRodrigo()
+    public function testMockReturnArgument()
     {
-        $provinha = new ProvinhaEstagiarios('Rodrigo', 10, 10, 100000000000);
-        
-        $resultadoEsperado = $provinha->getResultadoEsperado();
+        $conta = new Contas(new Numero(10), new Numero(10));
+        $provinha = new ProvinhaEstagiarios('Rodrigo', $conta, 100000000000);
         
         $contas = $this->getMockBuilder('LessonTddBundle\Service\Contas')
                 ->disableOriginalConstructor()
@@ -62,12 +73,8 @@ class ProvinhaEstagiariosTest extends TestCase
         $this->assertEquals(666, $contas->getResultado(666));        
     }
     
-    public function testResultadoPesadao()
+    public function testMockReturnSelf()
     {
-        $provinha = new ProvinhaEstagiarios('Matetinha', 14.90, 14.90, 100000000000);
-        
-        $contas = new \LessonTddBundle\Service\Numero(21);
-        
         $pesadao = $this->getMockBuilder('LessonTddBundle\Service\Contas')
                 ->disableOriginalConstructor()
                 ->getMock();
@@ -78,12 +85,8 @@ class ProvinhaEstagiariosTest extends TestCase
         $this->assertEquals($pesadao, $pesadao->getResultado());        
     }
     
-    public function testResultadoEnrico()
+    public function testMockReturnCallback()
     {
-        $provinha = new ProvinhaEstagiarios('Enrico', 14.90, 14.90, 100000000000);
-        
-        $contas = new \LessonTddBundle\Service\Numero(21);
-        
         $pesadao = $this->getMockBuilder('LessonTddBundle\Service\Contas')
                 ->disableOriginalConstructor()
                 ->getMock();
@@ -95,5 +98,18 @@ class ProvinhaEstagiariosTest extends TestCase
                 
         $this->assertEquals(12, $pesadao->getResultado(10)); 
     }
-            
+    
+    public function testResultadoEstagiagioAprovado()
+    {
+        $conta = new Contas(new Numero(10), new Numero(10));
+        $provinha = new ProvinhaEstagiarios('Gabriel', $conta, 28);
+        $this->assertTrue($provinha->avaliar());
+    }
+    
+    public function testResultadoEstagiagioReprovado()
+    {
+        $conta = new Contas(new Numero(1920), new Numero(10));
+        $provinha = new ProvinhaEstagiarios('Gabriel', $conta, 28);
+        $this->assertFalse($provinha->avaliar());
+    }
 }

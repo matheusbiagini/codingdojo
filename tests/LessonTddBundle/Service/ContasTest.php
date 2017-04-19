@@ -8,7 +8,7 @@ use LessonTddBundle\Service\Numero;
 
 
 /*
- * inicio
+ * Formula da conta:
 
 recebe a;
 
@@ -24,7 +24,7 @@ a = b / 2;
 
 c = 3 * a + b;
 
-se a &gt; 20
+se a > 20
 
 resultado = a + b;
 

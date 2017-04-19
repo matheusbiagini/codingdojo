@@ -10,7 +10,8 @@ class Contas
     private $b;
     private $a;
     
-    public function __construct(Numero $n1,Numero $n2) {
+    public function __construct(Numero $n1,Numero $n2) 
+    {
         $this->n1 = $n1;
         $this->n2 = $n2;
     }
