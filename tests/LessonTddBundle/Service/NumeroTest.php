@@ -10,6 +10,10 @@ class NumeroTest extends TestCase
 {
     private $args = array();
     
+    
+    /**
+     * @cover Numero::getNumero
+     */
     public function testInstanceOf()
     {
         $instance = new Numero(null);

@@ -84,19 +84,6 @@ class ExampleMatheusTest extends TestCase
         $this->assertInstanceOf('Exception', new Exception);
     }
     
-    /*
-    public function testStub()
-    {
-        $stuntDouble = $this->getMockBuilder('ClasseDoMatheus')
-              ->disableOriginalConstructor()
-              ->getMock();
-        
-        $stuntDouble->method('voceSabeMeuNome')
-             ->willReturn('Matheus');
-        
-        $this->assertEquals('Matheus', $stuntDouble->voceSabeMeuNome());
-    }*/
-    
     public function testAssertGreaterThanOrEqual()
     {
         $this->assertGreaterThanOrEqual(2, 2);
@@ -111,4 +98,96 @@ class ExampleMatheusTest extends TestCase
     {
         $this->assertInternalType('string', 'matheus');
     }
+    
+    public function testAssertContains()
+    {
+        $this->assertContains(2, array(1, 2, 3));
+    }
+    
+    public function testAssertCount()
+    {
+        $this->assertCount(2, array('1', '2'));
+    }
+    
+    public function testAssertArrayHasKey()
+    {
+        $this->assertArrayHasKey('foo', array('foo' => 'bar'));
+    }
+    
+    public function testAssertRegex()
+    {
+        $this->assertRegExp('/foo/', 'foo');
+    }
+    
+    public function testStubReturnValue()
+    {
+        $matheus = $this->getMockBuilder('LessonTddBundle\Service\ClasseDoMatheus')
+                ->disableOriginalConstructor()
+                ->getMock();
+        
+        $matheus->method('voceSabeMeuNome')
+                ->will($this->returnValue('Matheus'));
+        
+        $this->assertEquals('Matheus', $matheus->voceSabeMeuNome());
+    }
+    
+    public function testStubWillReturn()
+    {
+        // Cria um esboço para a classe ClasseDoMatheus.
+        $matheus = $this->getMockBuilder('LessonTddBundle\Service\ClasseDoMatheus')
+              ->disableOriginalConstructor()
+              ->getMock();
+        
+        // Configura o esboço do metodo voceSabeMeuNome para return matheus
+        $matheus->method('voceSabeMeuNome')
+             ->willReturn('Matheus');
+        
+        $this->assertEquals('Matheus', $matheus->voceSabeMeuNome());
+    }
+    
+    public function testReturnArgumentStub()
+    {
+        // Cria um esboço para a classe ClasseDoMatheus.
+        $stub = $this->getMockBuilder('LessonTddBundle\Service\ClasseDoMatheus')
+                     ->getMock();
+
+        // Configura o esboço.
+        $stub->method('voceSabeMeuNome')
+             ->will($this->returnArgument(0));
+
+        // $stub->voceSabeMeuNome('Matheus') retorna 'Matheus'.
+        $this->assertEquals('Matheus', $stub->voceSabeMeuNome('Matheus'));
+
+        // $stub->voceSabeMeuNome('Alice') retorna 'Alice'.
+        $this->assertEquals('Alice', $stub->voceSabeMeuNome('Alice'));
+    }
+    
+    public function testReturnSelf()
+    {
+        // Cria um esboço para a classe ClasseDoMatheus.
+        $stub = $this->getMockBuilder('LessonTddBundle\Service\ClasseDoMatheus')
+                     ->getMock();
+
+        // Configura o esboço.
+        $stub->method('voceSabeMeuNome')
+             ->will($this->returnSelf());
+
+        // $stub->voceSabeMeuNome() retorna $stub
+        $this->assertEquals($stub, $stub->voceSabeMeuNome());
+    }
+    
+    public function testReturnCallbackStub()
+    {
+        // Cria um esboço para a classe ClasseDoMatheus.
+        $stub = $this->getMockBuilder('LessonTddBundle\Service\ClasseDoMatheus')
+                     ->getMock();
+
+        // Configura o esboço.
+        $stub->method('voceSabeMeuNome')
+             ->will($this->returnCallback('strlen'));
+
+        // $stub->voceSabeMeuNome($argument) retorna strlen($argument)
+        $this->assertEquals(7, $stub->voceSabeMeuNome('Matheus'));
+    }
+    
 }

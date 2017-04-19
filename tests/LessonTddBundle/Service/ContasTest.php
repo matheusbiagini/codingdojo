@@ -61,7 +61,78 @@ class ContasTest extends TestCase
         $this->assertEquals(30, $instance->contaB()->getB());
     }
     
+    public function testContemContaB()
+    {
+        $instance = new Contas(new Numero(10), new Numero(10));
+        
+        $this->assertContains($instance->contaB()->getB(), [20, 30, 50]);
+    }
     
+    public function testArrayLengthContaA() 
+    {
+        $instance = new Contas(new Numero(10), new Numero(10));        
+        
+        $this->assertCount(1, [$instance->contaB()->contaA()->getA()]);
+    }
     
+    /**
+     * @dataProvider providerContaA
+     */
+    public function testArrayLengthContaAEmMassa($expected, $actual)
+    {
+        $this->assertCount($expected, [$actual]);
+    }
+    
+    public function providerContaA() 
+    {
+        $instance1 = new Contas(new Numero(10), new Numero(10));
+        $instance2 = new Contas(new Numero(100), new Numero(100));
+        $instance3 = new Contas(new Numero(1000), new Numero(1000));
+       
+        return [
+           array (1, $instance1->contaB()->contaA()->getA()),
+           array (1, $instance2->contaB()->contaA()->getA()),
+           array (1, $instance3->contaB()->contaA()->getA()),
+       ];        
+    }
+    
+    public function testGetterContaA() 
+    {
+        $instance = new Contas(new Numero(10), new Numero(10));        
+        
+        $this->assertEquals(15, $instance->contaB()->contaA()->getA());        
+    }  
+
+    public function testArrayHasKeyContaA() 
+    {
+        $instance = new Contas(new Numero(10), new Numero(10));        
+        
+        $this->assertArrayHasKey('contaA', ['contaA' => $instance->contaB()->contaA()->getA()]);        
+    }  
+    
+    public function testRegexContaA()
+    {
+        $instance = new Contas(new Numero(10), new Numero(10));  
+        
+        $this->assertRegExp("/\d{2}/", (string) $instance->contaB()->contaA()->getA());
+    }
+    
+    public function testContaCaso1()
+    {
+        $instance = new Contas(new Numero(10), new Numero(10));
+        
+        $resultado = $instance->getResultado();
+        
+        $this->assertEquals(28, $resultado);
+    }
+
+    public function testContaCaso2()
+    {
+        $instance = new Contas(new Numero(1000), new Numero(1000));
+        
+        $resultado = $instance->getResultado();
+        
+        $this->assertEquals(4500, $resultado);
+    }
     
 }

@@ -8,6 +8,7 @@ class Contas
     private $n1;
     private $n2;
     private $b;
+    private $a;
     
     public function __construct(Numero $n1,Numero $n2) {
         $this->n1 = $n1;
@@ -39,4 +40,28 @@ class Contas
     {
         return $this->b;
     }
+    
+    public function contaA() 
+    {
+        $this->a = $this->getB() / 2;
+        
+        return $this;
+    }
+    
+    public function getA()
+    {
+        return $this->a;
+    }
+    
+    public function getResultado() 
+    {
+        $this->contaB()->contaA();
+        
+        if($this->getA() > 20){
+            return $this->getA() + $this->getB();
+        }
+        
+        return $this->getB() - 2;
+    }
+    
 }
